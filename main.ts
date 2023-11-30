@@ -18,18 +18,7 @@ import { deleteRestaurante } from "./resolvers/delete_restaurant.ts";
 import { deleteBooking } from "./resolvers/delete_booking.ts";
 import { delete_all_Restaurante } from "./resolvers/delete_all_restaurants.ts";
 
-
-
-
-const env = await load();
-
-const MONGO_URL = env.MONGO_URL || Deno.env.get("MONGO_URL");
-
-if (!MONGO_URL) {
-  console.log("No mongo URL found");
-}
-
-await mongoose.connect(MONGO_URL);
+await mongoose.connect("mongodb+srv://juan:12345@cluster0.i5x1im4.mongodb.net/practica5?retryWrites=true&w=majority");
 console.info("MongoDB connected");
 
 // create express app
